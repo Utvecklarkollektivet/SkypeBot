@@ -60,8 +60,7 @@ namespace SkypeBot
                         
                         if(!string.IsNullOrEmpty(track))
                         {
-                            GoogleSearch("youtube" + track, sMsg);
-                            SendSkypeMessage(track, sMsg.ChatName);
+                            GoogleSearch("youtube" + track, sMsg, false, track);
                         }
                     }
                 }
@@ -76,7 +75,7 @@ namespace SkypeBot
             switch (args[0])
             {
                 case "ask":
-                    GoogleSearch(cmd.Remove(0, args[0].Length), sMsg);
+                    GoogleSearch(cmd.Remove(0, args[0].Length), sMsg, settings.IncludeSnippet, null);
                     break;
 
                 case "help":
@@ -136,7 +135,7 @@ namespace SkypeBot
             }
         }
 
-        static void GoogleSearch(string query, SkypeMessage sMSg)
+        static void GoogleSearch(string query, SkypeMessage sMSg, bool includeSnippet, string extra)
         {
             string result = "";
             GoogleSearch search = new GoogleSearch()
@@ -149,13 +148,21 @@ namespace SkypeBot
             {
                 StringBuilder s = new StringBuilder();
 
-                if (settings.IncludeSnippet)
+                if (includeSnippet)
                 {
                     s.Append(b.Response.Items[0].Snippet + Environment.NewLine + b.Response.Items[0].Link);
                 }
                 else
                 {
-                    s.Append(b.Response.Items[0].Link);
+                    if(string.IsNullOrEmpty(extra))
+                    {
+                        s.Append(b.Response.Items[0].Link);
+                    }
+                    else
+                    {
+                        s.Append(extra + Environment.NewLine + b.Response.Items[0].Link);
+                    }
+                    
                 }
                 
                 result = s.ToString();
