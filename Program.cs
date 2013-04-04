@@ -17,6 +17,8 @@ namespace SkypeBot
     {
         static SkypeBot.Models.Settings settings = new SkypeBot.Models.Settings();
         static Skype skype = new Skype();
+        static bool creatingEvent = false;
+        static Event tempEvent = null;
 
         static void Main(string[] args)
         {
@@ -26,8 +28,35 @@ namespace SkypeBot
             skype.Attach(7, false);
             skype.MessageStatus += new _ISkypeEvents_MessageStatusEventHandler(skype_MessageStatus);
 
+            int index = 0;
             while (!settings.Die)
             {
+                if (index == 60)
+                {
+                    EventsCollection events = new EventsCollection();
+                    events = EventManager.GetEvents();
+                    if (events.Events != null)
+                    {
+                        events.Events.Where(e => e.DateTime.ToShortDateString() == DateTime.Now.ToShortDateString() && e.DateTime.ToShortTimeString() == DateTime.Now.ToShortTimeString()).ToList().ForEach(e =>
+                            {
+                                StringBuilder s = new StringBuilder();
+                                s.AppendLine("======== EVENT ========");
+                                s.AppendLine(e.Text);
+                                s.AppendLine("");
+                                s.AppendLine("Created by: " + e.CreatedBy);
+                                s.AppendLine("======== /EVENT ========");
+
+                                SendSkypeMessage(s.ToString(), e.ChatName);
+                            });
+                    }
+
+                    index = 0;
+                }
+                else
+                {
+                    index++;
+                }
+
                 Thread.Sleep(1000);
             }
         }
@@ -52,17 +81,33 @@ namespace SkypeBot
                     string cmd = msg.Body.Remove(0, settings.Trigger.Length).ToLower();
                     ParseCMD(rawcmd, cmd, sMsg);
                 }
-                else if (settings.SpotifyToYoutube)
+                else if (msg.Body.StartsWith("http://open.spotify.com/track/"))
                 {
-                    if (msg.Body.StartsWith("http://open.spotify.com/track/"))
+                    if (settings.SpotifyToYoutube)
                     {
                         string track = Spotify.GetTrackName(msg.Body.Replace("http://open.spotify.com/track/", ""));
-                        
-                        if(!string.IsNullOrEmpty(track))
+
+                        if (!string.IsNullOrEmpty(track))
                         {
                             GoogleSearch("youtube" + track, sMsg, false, track);
                         }
                     }
+                }
+                else if (creatingEvent && msg.FromDisplayName == tempEvent.CreatedBy)
+                {
+                    tempEvent.Text = msg.Body;
+                    EventManager.Add(tempEvent);
+
+                    StringBuilder s = new StringBuilder();
+                    s.AppendLine("New Event Created");
+                    s.AppendLine("Created by: " + tempEvent.CreatedBy);
+                    s.AppendLine(tempEvent.DateTime.ToString());
+                    s.AppendLine("");
+                    s.AppendLine(tempEvent.Text);
+
+                    SendSkypeMessage(s.ToString(), sMsg.ChatName);
+                    creatingEvent = false;
+                    tempEvent = null;
                 }
             }
         }
@@ -127,6 +172,24 @@ namespace SkypeBot
                     settings.Die = !settings.Die;
                     result = sMsg.From + ", I will remeber this! Bye...";
                     break;
+
+                case "event":
+                    try
+                    {
+                        tempEvent = new Event();
+                        tempEvent.CreatedBy = sMsg.From;
+                        //tempEvent.DateTime = new DateTime();
+                        tempEvent.DateTime = DateTime.Parse(cmd.Remove(0, args[0].Length));
+                        tempEvent.ChatName = sMsg.ChatName;
+                        result = "Okey, " + sMsg.From + ". Next message from you will store the content of this new event, that will be displayd: + " +tempEvent.DateTime.ToString();
+                        creatingEvent = true;
+                    }
+                    catch(Exception e)
+                    {
+                        string s = e.Message;
+                    }
+                    
+                    break;
             }
 
             if (!string.IsNullOrEmpty(result))
@@ -154,7 +217,7 @@ namespace SkypeBot
                 }
                 else
                 {
-                    if(string.IsNullOrEmpty(extra))
+                    if (string.IsNullOrEmpty(extra))
                     {
                         s.Append(b.Response.Items[0].Link);
                     }
@@ -162,9 +225,9 @@ namespace SkypeBot
                     {
                         s.Append(extra + Environment.NewLine + b.Response.Items[0].Link);
                     }
-                    
+
                 }
-                
+
                 result = s.ToString();
                 SendSkypeMessage(result, b.SkypeMessage.ChatName);
             };
@@ -178,7 +241,7 @@ namespace SkypeBot
                 string s = sMSg.From + ", you must first set Google API Key and Google CX value before you can ask me things. See !help.";
                 SendSkypeMessage(s, sMSg.ChatName);
             }
-            
+
         }
     }
 }
