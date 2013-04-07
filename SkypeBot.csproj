@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\EventManager.cs" />
     <Compile Include="Helpers\FAQ.cs" />
     <Compile Include="Helpers\GoogleAPI.cs" />
     <Compile Include="Helpers\SettingsManager.cs" />
     <Compile Include="Helpers\Spotify.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\SkypeMessage.cs" />
     <Compile Include="Models\Spotify2YoutubeTrack.cs" />
