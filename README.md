@@ -1,0 +1,4 @@
+SkypeBot
+========
+
+Simple Skype bot.
