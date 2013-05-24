@@ -1,0 +1,9 @@
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.HelloUserPlugin\bin\Debug\SkypeBot.HelloUserPlugin.dll
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.HelloUserPlugin\bin\Debug\SkypeBot.HelloUserPlugin.pdb
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.HelloUserPlugin\bin\Debug\SkypeBot.Plugin.dll
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.HelloUserPlugin\bin\Debug\SkypeBot.Plugin.pdb
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.HelloUserPlugin\obj\Debug\SkypeBot.HelloUserPlugin.csprojResolveAssemblyReference.cache
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.HelloUserPlugin\obj\Debug\SkypeBot.HelloUserPlugin.dll
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.HelloUserPlugin\obj\Debug\SkypeBot.HelloUserPlugin.pdb
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.CMD\bin\Debug\Plugins\SkypeBot.HelloUserPlugin.dll
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.CMD\bin\Debug\Plugins\SkypeBot.HelloUserPlugin.pdb

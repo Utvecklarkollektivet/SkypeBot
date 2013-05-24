@@ -1,0 +1,5 @@
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.Plugin\bin\Debug\SkypeBot.Plugin.dll
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.Plugin\bin\Debug\SkypeBot.Plugin.pdb
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.Plugin\obj\Debug\SkypeBot.Plugin.csprojResolveAssemblyReference.cache
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.Plugin\obj\Debug\SkypeBot.Plugin.dll
+C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.Plugin\obj\Debug\SkypeBot.Plugin.pdb
