@@ -1,6 +1,0 @@
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBotDiePlugin\bin\Debug\SkypeBotDiePlugin.dll
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBotDiePlugin\bin\Debug\SkypeBotDiePlugin.pdb
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBotDiePlugin\bin\Debug\SkypeBot.Plugin.dll
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBotDiePlugin\bin\Debug\SkypeBot.Plugin.pdb
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBotDiePlugin\obj\Debug\SkypeBotDiePlugin.dll
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBotDiePlugin\obj\Debug\SkypeBotDiePlugin.pdb
