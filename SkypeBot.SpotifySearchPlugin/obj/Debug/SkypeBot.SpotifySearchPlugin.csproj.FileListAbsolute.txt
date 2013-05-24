@@ -1,9 +1,0 @@
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\obj\Debug\SkypeBot.SpotifySearchPlugin.csprojResolveAssemblyReference.cache
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\bin\Debug\SkypeBot.SpotifySearchPlugin.dll
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\bin\Debug\SkypeBot.SpotifySearchPlugin.pdb
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\bin\Debug\SkypeBot.Plugin.dll
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\bin\Debug\SkypeBot.Plugin.pdb
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\obj\Debug\SkypeBot.SpotifySearchPlugin.dll
-C:\Users\Filip\Documents\Visual Studio 2012\Projects\SkypeBot\SkypeBot.SpotifySearchPlugin\obj\Debug\SkypeBot.SpotifySearchPlugin.pdb
