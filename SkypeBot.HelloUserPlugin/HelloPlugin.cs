@@ -9,7 +9,7 @@ namespace SkypeBot.HelloUserPlugin
 {
     public class HelloPlugin : ISkypeBotPlugin
     {
-        public IEnumerable<string> Hooks { get { return new string[]{"!hello", "!name"}; } }
+        public IEnumerable<string> Hooks { get { return new string[] { "!hello", "!name" }; } }
         public bool GlobalHook { get { return false; } }
 
         public SkypeMessage Action(SkypeMessage skypeMessage)
