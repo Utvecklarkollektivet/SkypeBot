@@ -35,7 +35,7 @@ namespace SkypeBot.CMD
 
         static void skype_MessageStatus(ChatMessage msg, TChatMessageStatus status)
         {
-            if (status == TChatMessageStatus.cmsReceived && msg.Body.StartsWith("!"))
+            if (status == TChatMessageStatus.cmsReceived)
             {
                 SkypeMessage skypeMsg = new SkypeMessage()
                 {
